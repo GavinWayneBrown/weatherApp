@@ -12,6 +12,7 @@
   "dependencies": {
     "firebase": "^11.4.0",
     "firebase-tools": "^13.33.0",
+    "playwright": "^1.51.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
