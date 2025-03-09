@@ -6,6 +6,6 @@ import Weather from './weather.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Weather />
+    <Home />
   </StrictMode>,
 )

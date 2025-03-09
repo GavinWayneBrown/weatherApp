@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Weather.css";
 
 const Weather = () => {
+
   const [city, setCity] = useState("");
   const [weather, setWeather] = useState(null);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleSearch = async () => {
     if (!city) {
@@ -39,12 +42,15 @@ const Weather = () => {
 
   return (
     <div className="weather-container">
-      {/* Full-width header */}
       <header className="header">
         <div className="app-title">Weather App</div>
         <div className="buttons">
-          <button className="login-btn">Login</button>
-          <button className="signup-btn">Sign Up</button>
+          <button className="login-btn" onClick={() => navigate("/login")}>
+            Login
+          </button>
+          <button className="signup-btn" onClick={() => navigate("/signup")}>
+            Sign Up
+          </button>
         </div>
       </header>
 

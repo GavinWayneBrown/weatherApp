@@ -1,33 +1,19 @@
-import React, { useState } from 'react';
-
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Weather from "./weather";
+import Login from "./login";
+import Signup from "./Signup";
 const Home = () => {
-  const [location, setLocation] = useState('');
-  const [weather, setWeather] = useState(null);
-
-  const handleSearch = async () => {
-    // You will eventually pass the location to Playwright for search
-    console.log(`Searching weather for: ${location}`);
-  };
-
   return (
-    <div>
-      <h1>Weather App</h1>
-      <input 
-        type="text" 
-        placeholder="Enter location" 
-        value={location} 
-        onChange={(e) => setLocation(e.target.value)} 
-      />
-      <button onClick={handleSearch}>Search</button>
-      
-      {weather && (
-        <div>
-          <h2>{weather.location}</h2>
-          <p>{weather.temperature}</p>
-        </div>
-      )}
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Weather />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
+    </Router>
   );
+
 };
 
 export default Home;
